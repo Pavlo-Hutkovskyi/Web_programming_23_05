@@ -1,3 +1,2 @@
-# [Лабораторні роботи](https://(Pavlo-Hutkovskyi).github.io/Web_programming/ "Site on
-GitHub Pages")
-Web_programming - виконання лабораторних робіт, ПМ_23_05
+# [Лабораторні роботи](https://pavlo-hutkovskyi.github.io/Web_programming_23_05/ "Site on GitHub Pages")
+Лабраторні роботи, ПМ_23_05
