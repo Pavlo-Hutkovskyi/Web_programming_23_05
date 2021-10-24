@@ -1,0 +1,81 @@
+body{
+    background: url(../img/fon.jpg);
+    color:azure;
+    font-size: 20px;
+}
+h2{
+    color:darkgoldenrod;
+    text-align: center;
+    text-shadow: 3px 3px 3px black;
+}
+.h{
+    color:aqua;
+}
+.l{
+    color: rgb(84, 212, 152);
+}
+h1{
+    text-align: right;
+    color:blue;
+    text-shadow: 2px;
+}
+.but{
+    background-color: white;
+    color: rgb(9, 10, 10);
+    cursor: pointer;
+    border-radius:15px;
+}
+.mi{
+    height:20px;
+    width:20px;
+}
+.but:hover{
+    box-shadow: 7px 7px 7px black;
+    border:3px solid black;
+    border-radius:15px;
+}
+.numbered {
+    counter-reset: columnCounter;
+}
+.numbered>th+th,
+.numbered>td+td {
+    counter-increment: columnCounter;
+}
+.numbered>tr>th {
+    counter-increment: columnCounter;
+}
+.numbered>th::before,
+.numbered>td::before,
+.numbered>tr>th::before {
+    content: counter(columnCounter);
+}
+.numbered>th:first-child::before {
+    content: none;
+}
+table {
+    border: 2px solid #0c0a0a;
+    border-spacing: 1px;
+    padding: 2px 2px;
+    width: 60%;
+    margin: 0 0 auto;
+}
+table th,
+table td {
+    border: 2px solid #525291;
+}
+.table2 tr{
+    background-color: #0e0808;
+}
+.table2 th:nth-child(1),
+.table2 td:nth-child(1){
+    background-color: #020201;
+    
+}
+.table3 {
+    width: 60%;
+    margin: 0 0 0 auto;
+    text-align: center; 
+}
+.table2 {
+    margin: 0 auto;
+}
