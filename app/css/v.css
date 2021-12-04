@@ -121,7 +121,7 @@ body {
     flex-direction: column;
     display: flex;
     width: 100%;
-    height:500px;
+    height: 500px;
 }
 
 body.active .wrapper .sidebar {
@@ -136,49 +136,26 @@ body.active .wrapper .section {
 /*matrix*/
 
 input {
-    width: 56px;
-    height: 30px;
-}
-
-td {
-    width: 56px;
-    height: 30px;
-    background-color: white;
-}
-
-th {
-    background-color: var(--colorback);
+    width: 46px;
+    height: 20px;
 }
 
 
-table {
-    border: var(--colorback) solid 2px;
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    background-color: var(--colorback);
-}
-
-#rivne {
-    flex:0.2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    padding-top: 20px;
-}
 
 .container_m {
-    flex: 3;;
+    /*flex: 3;*/
+    height: 70%;
     display: flex;
     /*justify-content:center;*/
-    align-items: center;
+    flex-direction: column;
+    /*align-items:center;*/
     padding-top: 20px;
 }
 
 .actions {
+    height: 10%;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     margin: 16px;
 }
@@ -211,40 +188,42 @@ table {
     background-position: right center;
 }
 
-#size1{
+#size1 {
     display: flex;
     align-items: center;
-    flex:1;
-    height:50px;
-    margin: 30px;
-    width: 100%;
-    margin-left: 29px;
+    width: max-content;
 }
 
-select{
-    height:30px;
+select {
+    height: auto;
     margin-left: 8px;
 }
 
-#table-block1{
+#table-block1 {
+    margin-left: 3%;
     display: flex;
-    justify-content:right;
-    flex:3;
+    align-items: center;
+    flex: 3;
 }
 
-#table-block2{
+#table-block2 {
+    margin-left: 3%;
     display: flex;
-    justify-content:left;
-    flex:2;
+    align-items: center;
+    flex: 2;
 }
 
-#table-block{
+#table-block {
+    margin-left: 3%;
     display: flex;
-    justify-content:center;
-    align-items: left;
-    flex:3;
+    justify-content: center;
+    flex: 3;
 }
 
-p{
-  font-size: 20px;
+p {
+    font-size: auto;
+}
+
+#head {
+    height: 20%;
 }

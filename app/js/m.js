@@ -20,14 +20,11 @@ function tableCreate(num, rows, cols) {
         var tr = tbl.insertRow();
         for (var j = 0; j < cols; j++) {
             var td = tr.insertCell();
-            td.innerHTML = '<input type="number" id="a">';
+            td.innerHTML = "<input type='number' id='a'>";
         }
-        /*tbl.style*/
     }
     col = cols;
     row = rows;
-    console.log(col);
-    console.log(row);
     if (num == 1) {
         document.getElementById("table-block1").appendChild(tbl);
     } else {
@@ -43,7 +40,6 @@ var k = 0;
 var g = row * row;
 
 function isInt1(n) {
-    console.log(n % 1);
     return n % 1;
 }
 
@@ -62,11 +58,27 @@ function createArray() {
 
 function symmaArray() {
     k = 0;
-    g = 9;
+    g = row * row;
+    array1 = createArray(array1);
+    array2 = createArray(array2);
     for (let i = 0; i < size; i++) {
         for (let j = 0; j < size; j++) {
-            array1[i][j] = document.getElementsByTagName("input")[k++].value;
-            array2[i][j] = document.getElementsByTagName("input")[g++].value;
+            let mom = document.getElementsByTagName("input")[k++].value;
+            console.log(mom);
+            if (mom == '') {
+                array1[i][j] = 0;
+            } else {
+                array1[i][j] = mom;
+            }
+            console.log(array1[i][j]);
+            mom = document.getElementsByTagName("input")[g++].value;
+            console.log(mom);
+            if (mom == '') {
+                array2[i][j] = 0;
+            } else {
+                array2[i][j] = mom;
+            }
+            console.log(array2[i][j]);
         }
     }
     array3 = createArray(array3);
@@ -80,20 +92,33 @@ function symmaArray() {
 
 function distructionArray() {
     k = 0;
-    g = 9;
+    g = row * row;
     array1 = createArray(array1);
     array2 = createArray(array2);
     for (let i = 0; i < size; i++) {
         for (let j = 0; j < size; j++) {
-            array1[i][j] = document.getElementsByTagName("input")[k++].value;
-            array2[i][j] = document.getElementsByTagName("input")[g++].value;
+            let mom = document.getElementsByTagName("input")[k++].value;
+            console.log(mom);
+            if (mom == '') {
+                array1[i][j] = 0;
+            } else {
+                array1[i][j] = mom;
+            }
+            console.log(array1[i][j]);
+            mom = document.getElementsByTagName("input")[g++].value;
+            console.log(mom);
+            if (mom == '') {
+                array2[i][j] = 0;
+            } else {
+                array2[i][j] = mom;
+            }
+            console.log(array2[i][j]);
         }
     }
     array3 = createArray(array3);
     for (let i = 0; i < size; i++) {
         for (let j = 0; j < size; j++) {
-            var cur = parseFloat(array1[i][j]) - array2[i][j];
-            array3[i][j] = cur.toFixed(2);
+            array3[i][j] = parseFloat(array1[i][j]) - parseFloat(array2[i][j]);
         }
     }
     return array3;
@@ -102,13 +127,8 @@ function distructionArray() {
 function productArray() {
     k = 0;
     g = row * row;
-    console.log(k);
-    console.log(g);
-    console.log(size);
     array1 = createArray(array1);
     array2 = createArray(array2);
-    console.log(array1);
-    console.log(array2);
     for (let i = 0; i < size; i++) {
         for (let j = 0; j < size; j++) {
             array1[i][j] = document.getElementsByTagName("input")[k++].value;
@@ -123,77 +143,18 @@ function productArray() {
             }
         }
     }
-    console.log(array3);
     return array3;
 }
 
-function tranpositionArray(array1) {
-    array1 = createArray(array1);
-    k = 0;
-    for (let i = 0; i < size; i++) {
-        for (let j = 0; j < size; j++) {
-            array1[i][j] = document.getElementsByTagName("input")[k++].value;
-        }
-    }
-    for (let i = 0; i < size; i++) {
-        for (let j = i; j < size; j++) {
-            if (i != j) {
-                var t = array1[i][j];
-                array1[i][j] = array1[j][i];
-                array1[j][i] = t;
-            }
-
-        }
-    }
-    return array1;
-}
-
-function Gaysa(array) {
-    let k, flag;
-    for (let t = 1; t < array.length; t++) {
-        for (let i = t; i < array.length; i++, flag = true) {
-            for (let j = t - 1; j < array.length; j++) {
-                if (flag) {
-                    if (j == 0) {
-                        k = arr[i][j] / arr[0][j];
-                        arr[i][j] -= k * arr[0][j];
-                    } else {
-                        k = arr[i][j] / arr[i - 1][j];
-                        arr[i][j] -= k * arr[i - 1][j];
-                    }
-                    flag = false;
-                } else {
-                    if (t == 1)
-                        arr[i][j] -= k * arr[0][j];
-                    else
-                        arr[i][j] -= k * arr[i - 1][j];
-
-                }
-            }
-        }
-    }
-    return array;
-}
-
-function determinantArray(array1) {
-    array1 = Gaysa(array1);
-    k = 0;
-    for (let i = 0; i < size; i++) {
-        for (let j = 0; j < size; j++) {
-            array1[i][j] = document.getElementsByTagName("input")[k++].value;
-        }
-    }
-    let det = 1;
-    for (let i = 0; i < array1.length; i++)
-        det *= array1[i][i];
-    return det;
-}
-
-
-function tableCreate1() {
+function tableCreate1(name) {
     let inputs = document.getElementsByTagName('table');
-    array3 = productArray();
-    console.log(inputs.length);
+    if (name == 'p') {
+        array3 = productArray();
+    } else if (name == 's') {
+        array3 = symmaArray();
+    } else if (name == 'd') {
+        array3 = distructionArray();
+    }
     if (inputs.length <= 2) {
         var body = document.body;
         var tbl = document.createElement('table');
@@ -202,6 +163,7 @@ function tableCreate1() {
             for (let j = 0; j < col; j++) {
                 var td = tr.insertCell();
                 var moment = array3[i][j];
+                console.log(moment);
                 if (isInt1(moment) == 0 || isInt1(moment) == -0) {
                     td.appendChild(document.createTextNode(parseInt(moment)));
                 } else {
@@ -213,22 +175,19 @@ function tableCreate1() {
         document.getElementById("table-block").appendChild(tbl);
     } else {
         let tabl1 = document.getElementsByTagName("table")[2];
-        console.log(tabl1);
         document.getElementById("table-block").removeChild(tabl1);
-        tableCreate1();
+        tableCreate1(name);
     }
 }
 
 function changeValue(value) {
-    console.log(value);
     document.querySelector('table').remove();
     document.querySelector('table').remove();
-    console.log(document.getElementsByTagName('table').length);
     if (document.getElementsByTagName('table').length > 0) {
         document.querySelector('table').remove();
     }
     tableCreate(1, value, value);
     tableCreate(2, value, value);
     size = value;
-    console.log(size);
 }
+
