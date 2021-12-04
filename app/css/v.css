@@ -212,6 +212,12 @@ select {
     align-items: center;
     flex: 2;
 }
+#table-block3 {
+    margin-left: 3%;
+    display: flex;
+    align-items: center;
+    flex: 2;
+}
 
 #table-block {
     margin-left: 3%;

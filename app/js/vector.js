@@ -22,6 +22,8 @@ function addbegin(str, name, num) {
 document.getElementById("table-block1").addEventListener("load", addbegin("table-block1", "A", 2));
 document.getElementById("table-block2").addEventListener("load", addbegin("table-block2", "B", 2));
 
+var array4;
+var array3;
 var array1;
 var array2;
 var num_l = 0;
@@ -161,4 +163,85 @@ function middle_of_vector() {
         console.log(size);
     }
     return str;
+}
+
+function enter_scalar() {
+    var kilkist = document.getElementsByTagName("input").length;
+    result = middle_of_vector();
+    let str = "A*B=( " + result+" )";
+    var el = document.getElementById("table-block");
+    if (typeof el.innerText !== 'undefined') {
+        el.innerText = str;
+    } else {
+        el.textContent = str;
+    }
+}
+
+function middle_of_vector() {
+    let size = 0;
+    let str="";
+    array1=fillArray(array1,0);
+    array2=fillArray(array2,length_v);
+    for (let index = 0; index < length_v; index++) {
+        size += array1[index]*array2[index];
+    }
+    if (isInt1(size) != 0 || isInt1(size) != -0) {
+        size = size.toFixed(2);
+    }
+    str=size;
+    return str;
+}
+
+function Determinant(array1)   // Используется алгоритм Барейса, сложность O(n^3)
+{
+    var N = array1.length, B = [], denom = 1, exchanges = 0;
+    for (var i = 0; i < N; ++i)
+     { B[ i ] = [];
+       for (var j = 0; j < N; ++j) B[ i ][j] = array1[ i ][j];
+     }
+    for (var i = 0; i < N-1; ++i)
+     { var maxN = i, maxValue = Math.abs(B[ i ][ i ]);
+       for (var j = i+1; j < N; ++j)
+        { var value = Math.abs(B[j][ i ]);
+          if (value > maxValue){ maxN = j; maxValue = value; }
+        }
+       if (maxN > i)
+        { var temp = B[ i ]; B[ i ] = B[maxN]; B[maxN] = temp;
+          ++exchanges;
+        }
+       else { if (maxValue == 0) return maxValue; }
+       var value1 = B[ i ][ i ];
+       for (var j = i+1; j < N; ++j)
+        { var value2 = B[j][ i ];
+          B[j][ i ] = 0;
+          for (var k = i+1; k < N; ++k) B[j][k] = (B[j][k]*value1-B[ i ][k]*value2)/denom;
+        }
+       denom = value1;
+     }
+    if (exchanges%2) return -B[N-1][N-1];
+    else return B[N-1][N-1];
+}
+
+function kolinear() {
+    var flag;
+    let now;
+    array1=fillArray(array1,0);
+    array2=fillArray(array2,length_v);
+    for (let i = 0; i < length_v; i++) { 
+        if(i==0){
+            now=array2[i]/array1[i];
+        }else if(i>0&&now!==array2[i]/array1[i]){
+            flag="Вектори не колінеарні";
+            break;
+        }
+        else{
+            flag="Вектори колінеарні";
+        }
+    }
+    var el = document.getElementById("table-block");
+    if (typeof el.innerText !== 'undefined') {
+        el.innerText = flag;
+    } else {
+        el.textContent = flag;
+    }
 }

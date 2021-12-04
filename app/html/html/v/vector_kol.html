@@ -24,7 +24,7 @@
                 <div id="head">
                     <div id="size1">
                         <p><strong>Розмірніть вектора</strong></p>
-                        <select onchange="changeValue(this.value)">
+                        <select onchange="changeValue(this.value,this.label)">
                             <option value="3" label="2" selected="selected">2</option>
                             <option value="2" label="3">3</option>
                         </select>
@@ -38,7 +38,7 @@
                     <div id="table-block"></div>
                 </div>
                 <form class="actions"><button class="gradient-button" type='button'
-                        onclick="enter_middle()">Множити</button></form>
+                        onclick="kolinear()">Множити</button></form>
             </div>
         </div>
         <div class="sidebar">
@@ -68,15 +68,15 @@
                     </a>
                 </li>
                 <li>
-                    <a href="m_t.html">
+                    <a href="vector_s.html">
                         <span class="icon"><i class="fa fa-retweet" aria-hidden="true"></i></span>
                         <span class="item">Scalar</span>
                     </a>
                 </li>
                 <li>
-                    <a href="../m_det.html">
+                    <a href="#">
                         <span class="icon"><i class="fab fa-tumblr"></i></span>
-                        <span class="item">Determinant</span>
+                        <span class="item">mix</span>
                     </a>
                 </li>
             </ul>
