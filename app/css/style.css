@@ -26,8 +26,7 @@ header {
     padding: 110px 0;
 }
 
-header,
-footer {
+body {
     background:  var(--color1);
     background:  -moz-linear-gradient(left, var(--color1) 0%, var(--color2) 100%);
     background:  -webkit-linear-gradient(left, var(--color1) 0%, var(--color2) 100%);

@@ -96,3 +96,4 @@ function changeT(value) {
     tableCreate(1, value, value);
     size = value;
 }
+

@@ -190,4 +190,3 @@ function changeValue(value) {
     tableCreate(2, value, value);
     size = value;
 }
-
