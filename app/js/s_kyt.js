@@ -35,7 +35,7 @@ function kut() {
         l = l.toFixed(6);
     }
     let kut=(Math.acos(l) * 180) / Math.PI;
-    let res="cos a = "+l +"\n" + "a = " + kut + "градусів";
+    let res="cos a = "+l +"\n" + "a = " + kut + "  градусів";
     var el = document.getElementById("table-block");
     if (typeof el.innerText !== 'undefined') {
         el.innerText = res;

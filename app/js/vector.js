@@ -133,22 +133,11 @@ function changeType(nameType) {
     }
 }
 
-function enter_middle() {
-    var kilkist = document.getElementsByTagName("input").length;
-    result = middle_of_vector();
-    let str = "a=( " + result+" )";
-    var el = document.getElementById("table-block");
-    if (typeof el.innerText !== 'undefined') {
-        el.innerText = str;
-    } else {
-        el.textContent = str;
-    }
-}
-
 function middle_of_vector() {
     k = 0;
     let size = 0;
     let str="";
+    console.log(document.getElementsByTagName('input').length/2);
     for (let index = 0; index < document.getElementsByTagName('input').length/2; index++) {
         size = (document.getElementsByTagName('input')[index + document.getElementsByTagName('input').length / 2].value - document.getElementsByTagName('input')[index].value)/2;
         console.log(document.getElementsByTagName('input')[index + document.getElementsByTagName('input').length / 2].value +'-'+ document.getElementsByTagName('input')[index].value);
@@ -165,9 +154,23 @@ function middle_of_vector() {
     return str;
 }
 
+function enter_middle() {
+    console.log("goo");
+    var kilkist = document.getElementsByTagName("input").length;
+    let result = middle_of_vector();
+    let str = "a=( " + result+" )";
+    var el = document.getElementById("table-block");
+    if (typeof el.innerText !== 'undefined') {
+        el.innerText = str;
+    } else {
+        el.textContent = str;
+    }
+}
+
+
 function enter_scalar() {
     var kilkist = document.getElementsByTagName("input").length;
-    result = middle_of_vector();
+    result = sc();
     let str = "A*B=( " + result+" )";
     var el = document.getElementById("table-block");
     if (typeof el.innerText !== 'undefined') {
@@ -177,7 +180,7 @@ function enter_scalar() {
     }
 }
 
-function middle_of_vector() {
+function sc() {
     let size = 0;
     let str="";
     array1=fillArray(array1,0);
